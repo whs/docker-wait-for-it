@@ -1,4 +1,3 @@
 FROM debian:latest
-ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh /wait-for-it.sh
-RUN chmod +x /wait-for-it.sh
-ENTRYPOINT ["/wait-for-it.sh"]
+RUN apk update && apk --no-cache add wait-for-it
+ENTRYPOINT ["wait-for-it"]
