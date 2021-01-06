@@ -1,3 +1,3 @@
 FROM debian:latest
-RUN apk update && apk --no-cache add wait-for-it
+RUN apt-get update -y && apt-get install -y wait-for-it && rm -rf /var/lib/apt/lists/*
 ENTRYPOINT ["wait-for-it"]
